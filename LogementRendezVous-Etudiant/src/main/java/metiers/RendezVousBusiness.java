@@ -12,8 +12,12 @@ public class RendezVousBusiness {
     LogementBusiness logementMetier=new LogementBusiness();
     public RendezVousBusiness() {
       listeRendezVous = new ArrayList<>();
-    }
+      Logement logement = logementMetier.getLogementsByReference(1);
+      Logement logement1 = logementMetier.getLogementsByReference(2);
+      listeRendezVous.add(new RendezVous(1,"12/05/2024","15:30:48", logement,"25301552"));
+      listeRendezVous.add(new RendezVous(2,"13/05/2024","16:30:48", logement1,"26301552"));
 
+    }
 
     public boolean addRendezVous(RendezVous rendezVous){
 
