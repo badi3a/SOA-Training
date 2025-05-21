@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RendezVous</title>
+    <script>
+
+        const rendezVousList = [
+
+        ];
+
+
+        function displayRendezVous() {
+            const listContainer = document.getElementById("rendezvousList");
+            listContainer.innerHTML = "";
+            rendezVousList.forEach(rdv => {
+                const div = document.createElement("div");
+                div.innerHTML = `ID: ${rdv.id}, Date: ${rdv.date}, Heure: ${rdv.heure}, Logement: ${rdv.logement.name}, Tel: ${rdv.numTel} 
+                <button onclick="deleteRendezVous(${rdv.id})">Delete</button>
+                <button onclick="updateRendezVous(${rdv.id})">Update</button>`;
+                listContainer.appendChild(div);
+            });
+        }
+
+
+        function addRendezVous() {
+            const date = document.getElementById("date").value;
+            const heure = document.getElementById("heure").value;
+            const logement = { reference: parseInt(document.getElementById("logementReference").value), name: document.getElementById("logementName").value };
+            const numTel = document.getElementById("numTel").value;
+
+            const newRdv = { id: rendezVousList.length + 1, date, heure, logement, numTel };
+            rendezVousList.push(newRdv);
+            displayRendezVous();
+        }
+
+
+        function deleteRendezVous(id) {
+            const index = rendezVousList.findIndex(rdv => rdv.id === id);
+            if (index !== -1) {
+                rendezVousList.splice(index, 1);
+                displayRendezVous();
+            }
+        }
+
+
+        function updateRendezVous(id) {
+            const rdv = rendezVousList.find(rdv => rdv.id === id);
+            if (rdv) {
+                const newDate = prompt("Enter new date", rdv.date);
+                const newHeure = prompt("Enter new hour", rdv.heure);
+                rdv.date = newDate;
+                rdv.heure = newHeure;
+                displayRendezVous();
+            }
+        }
+
+        window.onload = () => {
+            displayRendezVous();
+        }
+    </script>
+</head>
+
+<body>
+    <h1>RendezVous</h1>
+
+    <h2>Add New RendezVous</h2>
+    <label for="date">Date:</label><br>
+    <input type="date" id="date"><br><br>
+    <label for="heure">Hour:</label><br>
+    <input type="time" id="heure"><br><br>
+    <label for="logementReference">Logement Reference:</label><br>
+    <input type="number" id="logementReference"><br><br>
+    <label for="logementName">Logement Name:</label><br>
+    <input type="text" id="logementName"><br><br>
+    <label for="numTel">Telephone:</label><br>
+    <input type="tel" id="numTel"><br><br>
+    <button onclick="addRendezVous()">Add RendezVous</button>
+
+    <h2>List of RendezVous</h2>
+    <div id="rendezvousList"></div>
+
+</body>
+
+</html>

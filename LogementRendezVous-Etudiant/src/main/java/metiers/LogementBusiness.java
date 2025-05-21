@@ -11,7 +11,7 @@ import java.util.List;
 public class LogementBusiness {
     private List<Logement> logements ;
 
-    public LogementBusiness() {
+    public  LogementBusiness() {
         logements=new ArrayList<Logement>();
         logements.add(new Logement(1,"27, Rue des roses", "El ghazela","Ariana","Studio","cuisine equipee",300f));
         logements.add(new Logement(5,"58, Rue des roses", "El ghazela","Ariana","EtageVilla","cuisine equipee",450f));

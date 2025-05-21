@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Logements</title>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <h1>Gestion des Logements</h1>
+
+    <h2>Ajouter un Logement</h2>
+    <form id="addLogementForm">
+        <label>Référence:</label>
+        <input type="number" id="reference" required>
+
+        <label>Adresse:</label>
+        <input type="text" id="adresse" required>
+
+        <label>Delegation:</label>
+        <input type="text" id="delegation" required>
+
+        <label>Gouvernorat:</label>
+        <input type="text" id="gouvernorat" required>
+
+        <label>Type:</label>
+        <input type="text" id="type" required>
+
+        <label>Description:</label>
+        <textarea id="description" required></textarea>
+
+        <label>Prix:</label>
+        <input type="number" id="prix" step="0.01" required>
+
+        <button type="submit">Ajouter</button>
+    </form>
+
+    <h2>Liste des Logements</h2>
+    <button onclick="fetchLogements()">Afficher les Logements</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Référence</th>
+                <th>Adresse</th>
+                <th>Delegation</th>
+                <th>Gouvernorat</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="logementsTableBody"></tbody>
+    </table>
+</body>
+</html>
