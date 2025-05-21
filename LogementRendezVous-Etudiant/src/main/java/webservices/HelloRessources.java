@@ -11,7 +11,7 @@ import javax.ws.rs.core.Response;
 public class HelloRessources {
     @GET
     @Path("/hi")
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.TEXT_PLAIN)          //Text, JSON, HTML, XML
     public Response sayHello() {
         return Response.
                 status(200).
