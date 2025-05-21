@@ -14,7 +14,6 @@ public class RendezVousBusiness {
       listeRendezVous = new ArrayList<>();
     }
 
-
     public boolean addRendezVous(RendezVous rendezVous){
 
         int refLogement=rendezVous.getLogement().getReference();

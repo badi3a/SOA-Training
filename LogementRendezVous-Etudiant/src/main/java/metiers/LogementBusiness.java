@@ -1,9 +1,7 @@
 package metiers;
 
 import entities.Logement;
-import entities.RendezVous;
 
-import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -17,7 +15,7 @@ public class LogementBusiness {
         logements.add(new Logement(5,"58, Rue des roses", "El ghazela","Ariana","EtageVilla","cuisine equipee",450f));
         logements.add(new Logement(2,"201, R�sidence Omrane4", "Riadh El Andalous","Ariana","EtageVilla","chauffage central, ascenseur, climatisation",700f));
         logements.add(new Logement(3,"540, R�sidence Les Tulipes", "El Aouina","Ariana","Appartement","S+2, chauffage central, ascenseur, climatisation",500f));
-        logements.add(new Logement(4,"78, Rue des Oranges", "Bardo","Tunis","EtageVilla","chauffage central, ascenseur, climatisation",400f));
+        logements.add(new Logement(1,"78, Rue des Oranges", "Bardo","Tunis","EtageVilla","chauffage central, ascenseur, climatisation",400f));
 
     }
 
@@ -34,10 +32,10 @@ public class LogementBusiness {
 
        return logements.add(logement);
     }
-    public List<Logement> getLogementsByDeleguation(String deleguation){
+    public List<Logement> getLogementsByDeleguation(String delegation){
         List<Logement> liste=new ArrayList<Logement>();
         for (Logement l:logements){
-            if(l.getDelegation().equals(deleguation))
+            if(l.getDelegation().equals(delegation))
                 liste.add(l);
         }
         return liste;
