@@ -1,5 +1,4 @@
 package webservices;
-
 import metiers.LogementBusiness;
 
 import javax.ws.rs.GET;
