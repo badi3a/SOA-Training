@@ -1,4 +1,5 @@
 metiers\RendezVousBusiness.class
+restApi\HelloRestApi.class
 entities\Logement.class
 metiers\LogementBusiness.class
 entities\RendezVous.class

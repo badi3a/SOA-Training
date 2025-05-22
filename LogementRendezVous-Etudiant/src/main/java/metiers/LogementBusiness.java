@@ -16,7 +16,7 @@ public class LogementBusiness {
         logements.add(new Logement(1,"27, Rue des roses", "El ghazela","Ariana","Studio","cuisine equipee",300f));
         logements.add(new Logement(5,"58, Rue des roses", "El ghazela","Ariana","EtageVilla","cuisine equipee",450f));
         logements.add(new Logement(2,"201, R�sidence Omrane4", "Riadh El Andalous","Ariana","EtageVilla","chauffage central, ascenseur, climatisation",700f));
-        logements.add(new Logement(3,"540, R�sidence Les Tulipes", "El Aouina","Ariana","Appartement","S+2, chauffage central, ascenseur, climatisation",500f));
+        logements.add(new Logement(3,"540, R�sidence Les T  ulipes", "El Aouina","Ariana","Appartement","S+2, chauffage central, ascenseur, climatisation",500f));
         logements.add(new Logement(4,"78, Rue des Oranges", "Bardo","Tunis","EtageVilla","chauffage central, ascenseur, climatisation",400f));
 
     }
