@@ -19,6 +19,12 @@ public class LogementRessources {
                 entity(help.getLogements()).
                 build();
     }
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public  Response getLogByRef(int ref){
+//        return Response
+//                status(200)
+//                        .en
+//    }
 
 
 }
