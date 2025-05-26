@@ -13,6 +13,6 @@ public class helloRestApi {
     @Produces(MediaType.TEXT_PLAIN)
     @Path("/song")
     public Response songBingo(){
-        return Response.status(200).entity("There was a farmer had a dog and Bingo was his name").build();
+        return Response.status(200).entity("Hello world !! ").build();
     }
 }
