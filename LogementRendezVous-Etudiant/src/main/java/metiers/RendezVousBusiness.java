@@ -23,6 +23,7 @@ public class RendezVousBusiness {
 
         if(logement!=null){
             rendezVous.setLogement(logement);
+            System.out.println("This prints to the console"+rendezVous.getId());
             return listeRendezVous.add(rendezVous);}
         return false;
     }
