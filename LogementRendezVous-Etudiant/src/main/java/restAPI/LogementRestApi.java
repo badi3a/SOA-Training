@@ -37,13 +37,24 @@ public class LogementRestApi {
         }
     }
 
+//    // GET logements by délégation ID
+//    @GET
+//    @Path("/delegation/{delegation}")
+//    public Response getLogementsByDelegation(@PathParam("delegation") String delegation) {
+//        List<Logement> logements = logementBusiness.getLogementsByDeleguation(delegation);
+//        return Response.ok(logements).build();
+//    }
+
     // GET logements by délégation
     @GET
-    @Path("/delegation/{delegation}")
-    public Response getLogementsByDelegation(@PathParam("delegation") String delegation) {
+    @Path("/delegation")
+    public Response getLogementsByDelegation(@QueryParam( value = "deleg") String delegation) {
         List<Logement> logements = logementBusiness.getLogementsByDeleguation(delegation);
         return Response.ok(logements).build();
     }
+
+
+
 
     // POST (add) logement
     @POST

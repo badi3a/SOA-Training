@@ -8,24 +8,28 @@ import java.util.Iterator;
 import java.util.List;
 
 public class RendezVousBusiness {
-    public static List<RendezVous> listeRendezVous;
+    public static List<RendezVous> listeRendezVous =  new ArrayList<RendezVous>();
     LogementBusiness logementMetier=new LogementBusiness();
     public RendezVousBusiness() {
-      listeRendezVous = new ArrayList<>();
+//      listeRendezVous = new ArrayList<RendezVous>();
     }
 
 
-    public boolean addRendezVous(RendezVous rendezVous){
 
-        int refLogement=rendezVous.getLogement().getReference();
+    public boolean addRendezVous(RendezVous rendezVous){
+        int refLogement = rendezVous.getLogement().getReference();
 
         Logement logement=logementMetier.getLogementsByReference(refLogement);
 
         if(logement!=null){
             rendezVous.setLogement(logement);
-            return listeRendezVous.add(rendezVous);}
+            return listeRendezVous.add(rendezVous);
+        }
         return false;
     }
+
+
+
     public List<RendezVous> getListeRendezVous() {
         return listeRendezVous;
     }

@@ -11,8 +11,8 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Path("/rendezvous")
-@Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON) // output
+@Consumes(MediaType.APPLICATION_JSON) // input
 public class RendezVousRestApi {
 
     private RendezVousBusiness rendezVousMetier = new RendezVousBusiness();

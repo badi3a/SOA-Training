@@ -11,7 +11,7 @@ public class helloRestApi {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    @Path("/song")
+    @Path("/hi")
     public Response songBingo(){
         return Response.status(200).entity("Hello world !! ").build();
     }
