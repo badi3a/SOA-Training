@@ -61,7 +61,7 @@ public class LogementBusiness {
         }
         return false;
     }
-    public boolean updateLogement(int reference, Logement logement){
+    public boolean updateLogement (int reference, Logement logement){
         int index = -1;
         for (int i = 0; i < logements.size(); i++) {
             if (logements.get(i).getReference() == reference) {
