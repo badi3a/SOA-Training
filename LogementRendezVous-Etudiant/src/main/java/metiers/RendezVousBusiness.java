@@ -26,6 +26,7 @@ public class RendezVousBusiness {
             return listeRendezVous.add(rendezVous);}
         return false;
     }
+
     public List<RendezVous> getListeRendezVous() {
         return listeRendezVous;
     }
@@ -33,6 +34,7 @@ public class RendezVousBusiness {
     public void setListeRendezVous(List<RendezVous> listeRendezVous) {
         this.listeRendezVous = listeRendezVous;
     }
+
     public List<RendezVous> getListeRendezVousByLogementReference(int reference) {
         List<RendezVous> liste=new ArrayList<RendezVous>();
         for(RendezVous r:listeRendezVous){
