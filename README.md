@@ -1,7 +1,7 @@
 # Exercice : Exposition des Web Services avec JAX-RS
 
 ## Objectif
-L'objectif de cet exercice est de développer une API REST en utilisant **JAX-RS** pour exposer les services web associés aux entités **Logement** et **Rendez-vous**. Ensuite, vous allez implémenter une documentation API avec **Swagger**.
+L'objectif de cet exercice est de développer une API REST en utilisant **JAX-RS** pour exposer les services web associés aux entités **Logement** et **Rendez-vous**. Ensuite, vous allez implémenter un client web simple (HTML, CSS, JS) pour consommer ces services, et enfin ajouter une documentation API avec **Swagger**.
 
 ---
 
@@ -32,6 +32,19 @@ public class LogementResource {
 }
 ```
 
+### 2. Développement du Client Web (HTML, CSS, JS)
+- Créez une interface web simple avec **HTML, CSS et JavaScript**.
+- Utilisez **Fetch API** ou **AJAX-Jquery** pour appeler les services REST du backend.
+- Affichez les données retournées par les services web dans l'interface.
+
+#### Exemple d'appel Fetch API
+```javascript
+fetch('http://localhost:8080/api/logements')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Erreur:', error));
+```
+
 ### 3. Documentation avec Swagger
 - Intégrez Swagger à votre projet pour documenter les services REST.
 - Ajoutez les annotations Swagger à vos classes de ressource JAX-RS.
@@ -50,6 +63,7 @@ public class LogementResource {
 
 ## Critères d'évaluation
 ✅ Web Services REST bien exposés avec JAX-RS.  
+✅ Client Web fonctionnel permettant de consommer les services.  
 ✅ Documentation API complète avec Swagger.  
 ✅ Bonne structuration du code et respect des bonnes pratiques.  
 
