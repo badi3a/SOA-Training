@@ -11,7 +11,17 @@ public class RendezVousBusiness {
     public static List<RendezVous> listeRendezVous;
     LogementBusiness logementMetier=new LogementBusiness();
     public RendezVousBusiness() {
-      listeRendezVous = new ArrayList<>();
+        listeRendezVous = new ArrayList<>();
+
+        Logement logement1 = logementMetier.getLogementsByReference(1);
+        Logement logement2 = logementMetier.getLogementsByReference(2);
+
+        if (logement1 != null) {
+            listeRendezVous.add(new RendezVous(1, "2024-01-01", "10:00", logement1, "0600000000"));
+        }
+        if (logement2 != null) {
+            listeRendezVous.add(new RendezVous(2, "2024-01-02", "15:00", logement2, "0700000000"));
+        }
     }
 
 
