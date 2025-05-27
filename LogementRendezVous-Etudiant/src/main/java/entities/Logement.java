@@ -2,7 +2,7 @@ package entities;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-
+@XmlRootElement  // nécessaire pour la sérialisation/désérialisation
 public class Logement {
     private int reference;
     private String adresse;
