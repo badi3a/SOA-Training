@@ -13,7 +13,7 @@ public class LogementRessources {
     @GET
     @Path("/getAll")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response  getAll(){
+    public Response getAll(){
         return Response.
                 status(200).header("Access-Control-Allow-Origin", "*").
                 entity(help.getLogements()).
