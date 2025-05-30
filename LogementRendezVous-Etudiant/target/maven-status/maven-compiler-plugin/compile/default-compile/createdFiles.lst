@@ -1,4 +1,6 @@
+App.class
 metiers\RendezVousBusiness.class
 entities\Logement.class
 metiers\LogementBusiness.class
+webService\HelloRestAPI.class
 entities\RendezVous.class
