@@ -1,7 +1,12 @@
 # 📘 Module SOA - ESPRIT 25
 
+<<<<<<< HEAD
 ## 🎯 Objectifs Pédagogiques
 Ce module de **20 heures** vise à permettre aux étudiants de :
+=======
+## Objectif
+L'objectif de cet exercice est de développer une API REST en utilisant **JAX-RS** pour exposer les services web associés aux entités **Logement** et **Rendez-vous**. Ensuite, vous allez implémenter une documentation API avec **Swagger**.
+>>>>>>> 011fa1ca0362936e249eb03d5266dd2c5e551d90
 
 - Maîtriser l'**architecture orientée services (SOA)**.
 - Comprendre la différence entre **SOAP et REST**.
@@ -24,6 +29,7 @@ Ce module de **20 heures** vise à permettre aux étudiants de :
 - Développement d'un **Web Service SOAP** en Java.
 - Manipulation avec **WSDL** et **UDDI**.
 
+<<<<<<< HEAD
 ### 🌐 Partie 3 : Web Services RESTful avec JAX-RS (6h)
 - Introduction à **JAX-RS** et aux **annotations**.
 - Implémentation d'un **Web Service REST** en Java.
@@ -40,6 +46,12 @@ Ce module de **20 heures** vise à permettre aux étudiants de :
 - Développement d'une **API GraphQL** en Java.
 - Optimisation des performances avec **GraphQL Queries & Mutations**.
 - Mise en place d'un **projet Java** exploitant **GraphQL**.
+=======
+### 3. Documentation avec Swagger
+- Intégrez Swagger à votre projet pour documenter les services REST.
+- Ajoutez les annotations Swagger à vos classes de ressource JAX-RS.
+- Assurez-vous que la documentation Swagger est accessible via l'URL **/swagger-ui**.
+>>>>>>> 011fa1ca0362936e249eb03d5266dd2c5e551d90
 
 ## 🛠️ Technologies et Outils Utilisés
 - **Langage** : Java  
@@ -52,9 +64,16 @@ Ce module de **20 heures** vise à permettre aux étudiants de :
 - Connaissances de base en **Java**.
 - Familiarité avec les **API Web** et HTTP.
 
+<<<<<<< HEAD
 ## 🎓 Évaluation
 - Mini-projets et TP pratiques.
 - Un projet final intégrant **REST, JWT et GraphQL**.
+=======
+## Critères d'évaluation
+✅ Web Services REST bien exposés avec JAX-RS.  
+✅ Documentation API complète avec Swagger.  
+✅ Bonne structuration du code et respect des bonnes pratiques.  
+>>>>>>> 011fa1ca0362936e249eb03d5266dd2c5e551d90
 
 ## 📢 Ressources Complémentaires
 - [Documentation officielle JAX-RS](https://jakarta.ee/specifications/restful-ws/)
