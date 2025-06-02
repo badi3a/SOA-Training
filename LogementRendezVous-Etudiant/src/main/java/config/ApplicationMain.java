@@ -1,9 +1,8 @@
-package config; // Moved to a package, e.g., 'config'
+package config;
 
 import io.swagger.jaxrs.listing.ApiListingResource;
 import io.swagger.jaxrs.listing.SwaggerSerializers;
-import webservices.LogementRessources;
-import webservices.RendezVousRessources;
+
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

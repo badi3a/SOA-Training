@@ -1,12 +1,9 @@
 package config;
 
 import io.swagger.jaxrs.config.BeanConfig;
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
+
 import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebListener;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 
 @WebListener
