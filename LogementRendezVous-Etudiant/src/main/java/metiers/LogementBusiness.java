@@ -1,9 +1,7 @@
 package metiers;
 
 import entities.Logement;
-import entities.RendezVous;
 
-import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

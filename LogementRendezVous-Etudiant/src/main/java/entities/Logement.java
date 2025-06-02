@@ -1,8 +1,5 @@
 package entities;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
-
 public class Logement {
     private int reference;
     private String adresse;

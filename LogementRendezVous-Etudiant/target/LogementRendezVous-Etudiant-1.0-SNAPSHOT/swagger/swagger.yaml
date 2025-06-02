@@ -1,0 +1,250 @@
+openapi: 3.0.0
+info:
+  version: "1.0.0"
+  title: "API Logement & Rendez-vous"
+  description: "Documentation OpenAPI 3.0 pour la gestion des logements et des rendez-vous"
+
+servers:
+  - url: http://localhost:8098/LogementRendezVous_Etudiant_war_exploded/api
+
+paths:
+
+  /logement/getAll:
+    get:
+      summary: Récupérer tous les logements
+      responses:
+        '200':
+          description: Liste des logements
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Logement'
+
+  /logement/getByRef/{ref}:
+    get:
+      summary: Récupérer un logement par sa référence
+      parameters:
+        - name: ref
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Logement trouvé
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Logement'
+        '404':
+          description: Logement non trouvé
+
+  /logement/getByDelegation/{delegation}:
+    get:
+      summary: Récupérer les logements par délégation
+      parameters:
+        - name: delegation
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Liste des logements
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Logement'
+        '404':
+          description: Aucune correspondance
+
+  /logement/add:
+    post:
+      summary: Ajouter un nouveau logement
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Logement'
+      responses:
+        '201':
+          description: Logement ajouté
+        '500':
+          description: Erreur serveur
+
+  /logement/delete/{ref}:
+    delete:
+      summary: Supprimer un logement
+      parameters:
+        - name: ref
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Supprimé
+        '404':
+          description: Non trouvé
+
+  /logement/update/{ref}:
+    patch:
+      summary: Mettre à jour un logement
+      parameters:
+        - name: ref
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Logement'
+      responses:
+        '200':
+          description: Mis à jour
+        '404':
+          description: Non trouvé
+
+  /rendezvous/getAll:
+    get:
+      summary: Récupérer tous les rendez-vous
+      responses:
+        '200':
+          description: Liste des rendez-vous
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RendezVous'
+
+  /rendezvous/getById/{id}:
+    get:
+      summary: Récupérer un rendez-vous par ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Détails du rendez-vous
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RendezVous'
+        '404':
+          description: Non trouvé
+
+  /rendezvous/getByLogementRef/{ref}:
+    get:
+      summary: Récupérer les rendez-vous d’un logement
+      parameters:
+        - name: ref
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Liste des rendez-vous
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RendezVous'
+
+  /rendezvous/add:
+    post:
+      summary: Ajouter un rendez-vous
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RendezVous'
+      responses:
+        '201':
+          description: Rendez-vous ajouté
+        '400':
+          description: Erreur de validation
+
+  /rendezvous/delete/{id}:
+    delete:
+      summary: Supprimer un rendez-vous
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Supprimé
+        '404':
+          description: Non trouvé
+
+  /rendezvous/update/{id}:
+    patch:
+      summary: Mettre à jour un rendez-vous
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RendezVous'
+      responses:
+        '200':
+          description: Mis à jour
+        '404':
+          description: Non trouvé
+
+components:
+  schemas:
+    Logement:
+      type: object
+      properties:
+        reference:
+          type: integer
+        adresse:
+          type: string
+        delegation:
+          type: string
+        gouvernorat:
+          type: string
+        type:
+          type: string
+        description:
+          type: string
+        prix:
+          type: number
+          format: float
+
+    RendezVous:
+      type: object
+      properties:
+        id:
+          type: integer
+        date:
+          type: string
+          format: date-time
+        logementReference:
+          type: integer
+        etudiantNom:
+          type: string

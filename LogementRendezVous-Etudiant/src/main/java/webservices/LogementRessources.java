@@ -1,6 +1,8 @@
 package webservices;
 
 import entities.Logement;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import metiers.LogementBusiness;
 
 import javax.ws.rs.*;
@@ -8,21 +10,23 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
-@Path("/logement")
+@Path("logement")
+@Api(value = "/logement", description = "Opérations sur les logements")
 public class LogementRessources {
     LogementBusiness help = new LogementBusiness();
 
-   // Afficher la liste totale des logements
+    // Afficher la liste totale des logements
     @GET
     @Path("/getAll")
     @Produces(MediaType.APPLICATION_JSON)
+    @ApiOperation(value = "Récupérer la liste de tous les logements", response = Logement.class, responseContainer = "List")
     public Response  getAll(){
         List<Logement> logements = help.getLogements();
         if (logements != null) {
-        return Response.
-                status(200).header("Access-Control-Allow-Origin", "*").
-                entity(logements).
-                build();
+            return Response.
+                    status(200).header("Access-Control-Allow-Origin", "*").
+                    entity(logements).
+                    build();
         } else {
             return Response.status(404)
                     .entity("Logements non trouvés")
@@ -34,6 +38,7 @@ public class LogementRessources {
     @GET
     @Path("/getByRef/{ref}")
     @Produces(MediaType.APPLICATION_JSON)
+    @ApiOperation(value = "Récupérer un logement par sa référence", response = Logement.class)
     public Response getByReference(@PathParam("ref") int reference) {
         Logement logement = help.getLogementsByReference(reference);
         if (logement != null) {
@@ -52,6 +57,7 @@ public class LogementRessources {
     @GET
     @Path("/getByDelegation/{delegation}")
     @Produces(MediaType.APPLICATION_JSON)
+    @ApiOperation(value = "Récupérer les logements par délégation", response = Logement.class, responseContainer = "List")
     public Response getByDelegation(@PathParam("delegation") String delegation) {
         List<Logement> logements = help.getLogementsByDeleguation(delegation);
         if (logements != null) {
@@ -72,6 +78,7 @@ public class LogementRessources {
     @Path("/add")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
+    @ApiOperation(value = "Ajouter un nouveau logement", response = String.class)
     public Response addLogement(Logement logement) {
         boolean added = help.addLogement(logement);
         if (added) {
@@ -89,6 +96,7 @@ public class LogementRessources {
     @DELETE
     @Path("/delete/{ref}")
     @Produces(MediaType.TEXT_PLAIN)
+    @ApiOperation(value = "Supprimer un logement par sa référence", response = String.class)
     public Response deleteLogement(@PathParam("ref") int reference) {
         boolean deleted = help.deleteLogement(reference);
         if (deleted) {
@@ -107,6 +115,7 @@ public class LogementRessources {
     @Path("/update/{ref}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_PLAIN)
+    @ApiOperation(value = "Mettre à jour un logement existant", response = String.class)
     public Response updateLogement(@PathParam("ref") int reference, Logement logement) {
         boolean updated = help.updateLogement(reference, logement);
         if (updated) {

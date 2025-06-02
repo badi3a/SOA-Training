@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Swagger UI</title>
+  <link rel="stylesheet" type="text/css" href="./swagger-ui.css" />
+  <script src="./swagger-ui-bundle.js"></script>
+  <script src="./swagger-ui-standalone-preset.js"></script>
+</head>
+<body>
+<div id="swagger-ui"></div>
+<script>
+  const ui = SwaggerUIBundle({
+    url: "../swagger/swagger.yaml", // chemin relatif
+    dom_id: '#swagger-ui',
+    deepLinking: true,
+    presets: [
+      SwaggerUIBundle.presets.apis,
+    ],
+    layout: "BaseLayout"
+  });
+</script>
+</body>
+</html>

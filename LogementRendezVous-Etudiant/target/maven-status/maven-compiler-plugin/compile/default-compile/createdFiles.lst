@@ -1,4 +1,9 @@
-metiers\RendezVousBusiness.class
+config\swaggerConfig.class
+webservices\RendezVousRessources.class
 entities\Logement.class
+config\ApplicationMain.class
+webservices\LogementRessources.class
+metiers\RendezVousBusiness.class
 metiers\LogementBusiness.class
+webservices\HelloRessources.class
 entities\RendezVous.class
