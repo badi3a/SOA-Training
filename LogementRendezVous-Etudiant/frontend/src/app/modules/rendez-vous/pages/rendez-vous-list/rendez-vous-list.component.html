@@ -1,0 +1,77 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">{{ isEditing ? '📝 Modifier RDV' : '📅 Nouveau Rendez-vous' }}</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="row g-3 mx-auto" style="max-width: 600px;">
+    <div class="col-md-6">
+      <label class="form-label">Date</label>
+      <input type="date" class="form-control" formControlName="date" />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Heure</label>
+      <input type="time" class="form-control" formControlName="heure" />
+    </div>
+
+    <div class="col-12">
+      <label class="form-label">Adresse du logement</label>
+      <select class="form-select" formControlName="logementReference">
+        <option value="" disabled selected>-- Choisir une adresse --</option>
+        <option *ngFor="let logement of logements" [value]="logement.reference">
+          {{ logement.adresse }}
+        </option>
+      </select>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Téléphone</label>
+      <input type="tel" class="form-control" placeholder="+216..." formControlName="numTel" />
+    </div>
+
+    <div class="col-12 d-flex gap-3">
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+        {{ isEditing ? '✅ Modifier' : '➕ Ajouter' }}
+      </button>
+      <button *ngIf="isEditing" type="button" class="btn btn-secondary" (click)="resetForm()">❌ Annuler</button>
+    </div>
+  </form>
+
+  <hr class="my-4" />
+
+  <div class="mb-3" style="max-width: 300px;">
+    <input
+      [(ngModel)]="searchText"
+      (input)="filterList()"
+      class="form-control"
+      placeholder="🔍 Rechercher RDV"
+    />
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+      <thead class="table-dark text-center">
+      <tr>
+        <th>Date</th>
+        <th>Heure</th>
+        <th>Adresse</th>
+        <th>Téléphone</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let rdv of filteredList">
+        <td>{{ rdv.date }}</td>
+        <td>{{ rdv.heure }}</td>
+        <td>{{ rdv.logement?.adresse }}</td>
+        <td>{{ rdv.numTel }}</td>
+        <td class="text-center">
+          <button class="btn btn-warning btn-sm me-1" (click)="editRendezVous(rdv)">✏️</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteRendezVous(rdv.id!)">🗑️</button>
+        </td>
+      </tr>
+      <tr *ngIf="filteredList.length === 0">
+        <td colspan="5" class="text-center">Aucun rendez-vous trouvé.</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

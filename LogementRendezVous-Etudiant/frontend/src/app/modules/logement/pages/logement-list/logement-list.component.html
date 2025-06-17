@@ -1,0 +1,104 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">{{ isModification ? '✏️ Modifier un logement' : '🏡 Ajouter un logement' }}</h2>
+
+  <form (ngSubmit)="isModification ? enregistrerModification() : ajouterLogement()" #logementForm="ngForm" class="row g-3">
+    <div class="col-md-6">
+      <label class="form-label">Référence</label>
+      <input
+        type="number"
+        class="form-control"
+        [(ngModel)]="logement.reference"
+        name="reference"
+        required
+        [readonly]="isModification"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Adresse</label>
+      <input class="form-control" [(ngModel)]="logement.adresse" name="adresse" required />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Délégation</label>
+      <input class="form-control" [(ngModel)]="logement.delegation" name="delegation" required />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Gouvernorat</label>
+      <input class="form-control" [(ngModel)]="logement.gouvernorat" name="gouvernorat" required />
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Type</label>
+      <input class="form-control" [(ngModel)]="logement.type" name="type" required />
+    </div>
+
+    <div class="col-md-12">
+      <label class="form-label">Description</label>
+      <textarea class="form-control" [(ngModel)]="logement.description" name="description"></textarea>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Prix (DT)</label>
+      <input type="number" class="form-control" [(ngModel)]="logement.prix" name="prix" required />
+    </div>
+
+    <div class="col-12 d-flex gap-3">
+      <button type="submit" class="btn btn-success" [disabled]="logementForm.invalid">
+        {{ isModification ? '💾 Enregistrer' : '➕ Ajouter' }}
+      </button>
+      <button *ngIf="isModification" type="button" class="btn btn-secondary" (click)="logement = getEmptyLogement(); isModification = false;">
+        ❌ Annuler
+      </button>
+    </div>
+  </form>
+
+  <hr class="my-4" />
+
+  <h3 class="mb-3">📋 Liste des logements</h3>
+  <div class="mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="🔍 Recherche par référence ou délégation..."
+      [(ngModel)]="searchTerm"
+      (ngModelChange)="filtrerLogements()"
+    />
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class="table-dark text-center">
+      <tr>
+        <th>Réf</th>
+        <th>Adresse</th>
+        <th>Délégation</th>
+        <th>Gouvernorat</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Prix</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let l of logementsFiltres">
+        <td>{{ l.reference }}</td>
+        <td>{{ l.adresse }}</td>
+        <td>{{ l.delegation }}</td>
+        <td>{{ l.gouvernorat }}</td>
+        <td>{{ l.type }}</td>
+        <td>{{ l.description }}</td>
+        <td>{{ l.prix }}</td>
+        <td class="text-center">
+          <button class="btn btn-warning btn-sm me-1" (click)="modifierLogement(l)">✏️</button>
+          <button class="btn btn-danger btn-sm" (click)="supprimerLogement(l.reference)">🗑️</button>
+        </td>
+      </tr>
+      <tr *ngIf="logementsFiltres.length === 0">
+        <td colspan="8" class="text-center">Aucun logement trouvé.</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
