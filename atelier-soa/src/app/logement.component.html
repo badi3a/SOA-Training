@@ -1,0 +1,51 @@
+<div class="section">
+  <button class="main-btn" routerLink="/">Accueil</button>
+  <h2>Logement</h2>
+  <div class="search-bar">
+    <input type="number" [(ngModel)]="searchReference" placeholder="Rechercher par référence" min="1" name="searchReference" />
+    <button (click)="searchByReference()">Rechercher</button>
+  </div>
+  <div *ngIf="searchTriggered">
+    <ng-container *ngIf="searchResult; else notFound">
+      <h3>Résultat de la recherche :</h3>
+      <table>
+        <tr>
+          <th>Reference</th><th>Adresse</th><th>Délégation</th><th>Gouvernorat</th><th>Type</th><th>Description</th><th>Prix</th>
+        </tr>
+        <tr>
+          <td>{{searchResult.reference}}</td><td>{{searchResult.adresse}}</td><td>{{searchResult.delegation}}</td><td>{{searchResult.gouvernorat}}</td><td>{{searchResult.type}}</td><td>{{searchResult.description}}</td><td>{{searchResult.prix}}</td>
+        </tr>
+      </table>
+    </ng-container>
+    <ng-template #notFound>
+      <div class="not-found">Aucun logement trouvé avec cette référence.</div>
+    </ng-template>
+  </div>
+  <form (ngSubmit)="onSubmit()" #logementForm="ngForm">
+    <input type="number" name="reference" [(ngModel)]="logement.reference" placeholder="Reference" required min="1" [readonly]="isEditMode" />
+    <input type="text" name="adresse" [(ngModel)]="logement.adresse" placeholder="Adresse" required />
+    <input type="text" name="delegation" [(ngModel)]="logement.delegation" placeholder="Délégation" required />
+    <input type="text" name="gouvernorat" [(ngModel)]="logement.gouvernorat" placeholder="Gouvernorat" required />
+    <input type="text" name="type" [(ngModel)]="logement.type" placeholder="Type" required />
+    <input type="text" name="description" [(ngModel)]="logement.description" placeholder="Description" required />
+    <input type="number" name="prix" [(ngModel)]="logement.prix" placeholder="Prix" required min="1" />
+    <button type="submit" [disabled]="!isFormValid">{{ isEditMode ? 'Update' : 'Add' }}</button>
+    <button type="button" (click)="resetForm()">Reset</button>
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>Reference</th><th>Adresse</th><th>Délégation</th><th>Gouvernorat</th><th>Type</th><th>Description</th><th>Prix</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let l of logements">
+        <td>{{l.reference}}</td><td>{{l.adresse}}</td><td>{{l.delegation}}</td><td>{{l.gouvernorat}}</td><td>{{l.type}}</td><td>{{l.description}}</td><td>{{l.prix}}</td>
+        <td>
+          <button (click)="editLogement(l)">Edit</button>
+          <button (click)="deleteLogement(l.reference)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

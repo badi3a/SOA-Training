@@ -1,4 +1,8 @@
-metiers\RendezVousBusiness.class
+WebServices\RendezVousAPI.class
+Main.class
 entities\Logement.class
+metiers\RendezVousBusiness.class
 metiers\LogementBusiness.class
+WebServices\HelloAPI.class
+WebServices\LogementAPI.class
 entities\RendezVous.class

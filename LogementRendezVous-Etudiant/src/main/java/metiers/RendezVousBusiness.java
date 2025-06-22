@@ -8,10 +8,10 @@ import java.util.Iterator;
 import java.util.List;
 
 public class RendezVousBusiness {
-    public static List<RendezVous> listeRendezVous;
+    public static List<RendezVous> listeRendezVous = new ArrayList<>();
     LogementBusiness logementMetier=new LogementBusiness();
     public RendezVousBusiness() {
-      listeRendezVous = new ArrayList<>();
+
     }
 
 
