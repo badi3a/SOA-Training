@@ -1,0 +1,44 @@
+<div class="section">
+  <button class="main-btn" routerLink="/">Accueil</button>
+  <h2>RendezVous</h2>
+  <form (ngSubmit)="onSubmit()" #rdvForm="ngForm">
+    <div class="form-group">
+      <label for="id">ID</label>
+      <input type="number" id="id" name="id" [(ngModel)]="rdv.id" placeholder="ID" [readonly]="isEditMode" />
+    </div>
+    <div class="form-group">
+      <label for="date">Date</label>
+      <input type="text" id="date" name="date" [(ngModel)]="rdv.date" placeholder="Date" required />
+    </div>
+    <div class="form-group">
+      <label for="heure">Heure</label>
+      <input type="text" id="heure" name="heure" [(ngModel)]="rdv.heure" placeholder="Heure" required />
+    </div>
+    <div class="form-group">
+      <label for="logementReference">Logement Reference</label>
+      <input type="number" id="logementReference" name="logementReference" [(ngModel)]="rdv.logement.reference" placeholder="Logement Reference" required min="1" />
+    </div>
+    <div class="form-group">
+      <label for="numTel">Numéro de téléphone</label>
+      <input type="text" id="numTel" name="numTel" [(ngModel)]="rdv.numTel" placeholder="Numéro de téléphone" required />
+    </div>
+    <button type="submit" [disabled]="!isFormValid">{{ isEditMode ? 'Update' : 'Add' }}</button>
+    <button type="button" (click)="resetForm()">Reset</button>
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th><th>Date</th><th>Heure</th><th>Logement Ref</th><th>Num Tel</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of rendezvous">
+        <td>{{r.id}}</td><td>{{r.date}}</td><td>{{r.heure}}</td><td>{{r.logement.reference}}</td><td>{{r.numTel}}</td>
+        <td>
+          <button (click)="editRendezVous(r)">Edit</button>
+          <button (click)="deleteRendezVous(r.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

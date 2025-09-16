@@ -1,0 +1,7 @@
+.section { margin: 1rem; padding: 1rem; border: 1px solid #ccc; border-radius: 8px; background: #f9f9f9; }
+table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+th { background: #eee; }
+button { margin-right: 0.5rem; }
+form { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+input { padding: 0.3rem; border: 1px solid #bbb; border-radius: 4px; }

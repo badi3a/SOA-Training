@@ -9,15 +9,20 @@ import java.util.Iterator;
 import java.util.List;
 
 public class LogementBusiness {
-    private List<Logement> logements ;
-
-    public LogementBusiness() {
-        logements=new ArrayList<Logement>();
+    private static List<Logement> logements ; ;
+    static {
+        logements = new ArrayList<>();
         logements.add(new Logement(1,"27, Rue des roses", "El ghazela","Ariana","Studio","cuisine equipee",300f));
         logements.add(new Logement(5,"58, Rue des roses", "El ghazela","Ariana","EtageVilla","cuisine equipee",450f));
-        logements.add(new Logement(2,"201, R�sidence Omrane4", "Riadh El Andalous","Ariana","EtageVilla","chauffage central, ascenseur, climatisation",700f));
-        logements.add(new Logement(3,"540, R�sidence Les Tulipes", "El Aouina","Ariana","Appartement","S+2, chauffage central, ascenseur, climatisation",500f));
+        logements.add(new Logement(2,"201, Résidence Omrane4", "Riadh El Andalous","Ariana","EtageVilla","chauffage central, ascenseur, climatisation",700f));
+        logements.add(new Logement(3,"540, Résidence Les Tulipes", "El Aouina","Ariana","Appartement","S+2, chauffage central, ascenseur, climatisation",500f));
         logements.add(new Logement(4,"78, Rue des Oranges", "Bardo","Tunis","EtageVilla","chauffage central, ascenseur, climatisation",400f));
+    }
+
+
+    public LogementBusiness() {
+
+
 
     }
 
