@@ -1,4 +1,5 @@
-# 🧪 Workshop REST n°1 — SOA_2025_sae8
+# 🧪 Workshop REST n°1 — SOA_2025
+
 
 ## 📘 Overview
 In this workshop, you will develop a **RESTful Web Service** in **Java (JAX-RS)** to expose business methods for two entities:
