@@ -1,6 +1,9 @@
 package webservices;
 
 // Import the necessary JAX-RS (Java API for RESTful Web Services) annotations and classes
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 import javax.ws.rs.GET;               // Annotation to indicate that a method responds to an HTTP GET request
 import javax.ws.rs.Path;              // Annotation to define the URL path of a resource
 import javax.ws.rs.PathParam;         // Annotation to extract dynamic values from the URL
@@ -10,12 +13,14 @@ import javax.ws.rs.core.Response;     // Class used to build a custom HTTP respo
 
 // The resource will be accessible at the base URL followed by /hello
 @Path("/hello")
+@Tag(name = "UE Ressources", description = "Gestion des Unités d'Enseignement")
 public class HelloRessources {
 
     // This method handles GET requests sent to /hello/hi
     @GET
     @Path("/hi")
     @Produces(MediaType.TEXT_PLAIN)   // The response will be returned as plain text
+    @Operation(summary = "Dit bonjour pour test Swagger")
     public Response sayHello() {
         // Build an HTTP 200 (OK) response with the message "Hello World!"
         return Response
