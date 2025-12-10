@@ -2,7 +2,6 @@ package webservices;
 
 import entities.UniteEnseignement;
 import metiers.UniteEnseignementBusiness;
-
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -12,7 +11,6 @@ public class UERessources {
 
     static UniteEnseignementBusiness helper = new UniteEnseignementBusiness();
 
-    // GET ALL
     @GET
     @Path("/list")
     @Produces(MediaType.APPLICATION_JSON)
@@ -23,7 +21,6 @@ public class UERessources {
                 .build();
     }
 
-    // CREATE
     @POST
     @Path("/new")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -42,7 +39,6 @@ public class UERessources {
         }
     }
 
-    // DELETE
     @DELETE
     @Path("/delete/{id}")
     @Produces(MediaType.TEXT_PLAIN)
@@ -60,7 +56,6 @@ public class UERessources {
         }
     }
 
-    // UPDATE ✅ (CORRIGÉ)
     @PUT
     @Path("/update/{id}")
     @Consumes(MediaType.APPLICATION_JSON)

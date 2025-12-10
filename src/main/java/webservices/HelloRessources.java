@@ -5,7 +5,6 @@ import javax.ws.rs.GET;               // Annotation to indicate that a method re
 import javax.ws.rs.Path;              // Annotation to define the URL path of a resource
 import javax.ws.rs.PathParam;         // Annotation to extract dynamic values from the URL
 import javax.ws.rs.Produces;          // Annotation to define the type of content returned (text, JSON, XML…)
-import javax.ws.rs.core.Application;
 import javax.ws.rs.core.MediaType;    // Provides constants for standard media types (e.g., TEXT_PLAIN, APPLICATION_JSON…)
 import javax.ws.rs.core.Response;     // Class used to build a custom HTTP response
 
