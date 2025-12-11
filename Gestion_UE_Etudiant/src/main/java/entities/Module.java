@@ -7,6 +7,7 @@ public class Module {
     private int volumeHoraire;
     private TypeModule type;
     private UniteEnseignement uniteEnseignement; // Référence vers l'UE associée
+
     public Module(){}
     // Constructeur
     public Module(String matricule, String nom, int coefficient, int volumeHoraire, TypeModule type) {
