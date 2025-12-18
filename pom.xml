@@ -3,6 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
@@ -14,7 +15,12 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Versions centralisées -->
         <jersey.version>2.41</jersey.version>
+        <swagger.version>2.2.11</swagger.version>
+        <swagger.ui.version>4.15.5</swagger.ui.version>
+        <jaxb.version>2.3.3</jaxb.version>
     </properties>
 
     <dependencies>
@@ -32,7 +38,7 @@
             <version>${jersey.version}</version>
         </dependency>
 
-        <!-- JSON Binding -->
+        <!-- JSON-Binding -->
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-json-binding</artifactId>
@@ -46,49 +52,45 @@
             <version>${jersey.version}</version>
         </dependency>
 
-        <!-- Injection Jersey -->
+        <!-- Injection Jersey (HK2) -->
         <dependency>
             <groupId>org.glassfish.jersey.inject</groupId>
             <artifactId>jersey-hk2</artifactId>
             <version>${jersey.version}</version>
         </dependency>
 
-        <!-- JAXB runtime (pour Java 9+) -->
+        <!-- JAXB runtime (Java 9+) -->
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
-            <version>2.3.3</version>
+            <version>${jaxb.version}</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jaxb</groupId>
             <artifactId>jaxb-runtime</artifactId>
-            <version>2.3.3</version>
+            <version>${jaxb.version}</version>
         </dependency>
 
         <!-- Swagger Core (JAX-RS) -->
         <dependency>
             <groupId>io.swagger.core.v3</groupId>
             <artifactId>swagger-jaxrs2</artifactId>
-            <version>2.2.11</version>
+            <version>${swagger.version}</version>
         </dependency>
         <dependency>
             <groupId>io.swagger.core.v3</groupId>
             <artifactId>swagger-annotations</artifactId>
-            <version>2.2.11</version>
+            <version>${swagger.version}</version>
         </dependency>
 
         <!-- Swagger UI via WebJars -->
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>swagger-ui</artifactId>
-            <version>4.15.5</version>
+            <version>${swagger.ui.version}</version>
         </dependency>
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt</artifactId>
-            <version>0.6.0</version>
-        </dependency>
-        <!-- Servlet API -->
+
+        <!-- Servlet API (fournie par le serveur d’appli) -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -116,7 +118,7 @@
                                 <artifactItem>
                                     <groupId>org.webjars</groupId>
                                     <artifactId>swagger-ui</artifactId>
-                                    <version>4.15.5</version>
+                                    <version>${swagger.ui.version}</version>
                                     <outputDirectory>${project.build.directory}/swagger-ui</outputDirectory>
                                     <includes>**/*</includes>
                                 </artifactItem>
@@ -144,4 +146,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
