@@ -83,7 +83,7 @@ Chaque équipe (3–4 étudiants) doit fournir :
 2. **Un schéma UML (ou équivalent)** illustrant la vision.
 3. **Une présentation orale** courte (5–10 minutes) en groupe.
 ---
-### 👨‍🏫 Enseigante
-- **[Badia Bouhdid](https://www.linkedin.com/in/badiabouhdid)**
-  
-🏫 Cette formation est dispensée dans le cadre du module Architecture Orientée Services (SOA) à [l’École d’Ingénieurs ESPRIT.](https://www.esprit.tn)
+## 🏫 Cadre pédagogique
+### Enseignante:- **[Badia Bouhdid](https://www.linkedin.com/in/badiabouhdid)**
+Cet atelier est dispensé dans le cadre du **module Architecture Orientée Services (SOA)**  
+à l’[**École d’Ingénieurs ESPRIT**.](https://www.esprit.tn)
