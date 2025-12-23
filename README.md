@@ -1,84 +1,88 @@
-# Atelier 1 – Analysis and Refactoring of a University Application
+# Workshop 1 — Analyse et Refonte d’une Application Universitaire (SOA)
+
+**Année Universitaire : 2025–2026**  
+**Module : SOA — Ateliers**  
+**Workshop n°1 : Analyse et Refonte d’une Application Universitaire**
+➡️ [Voir le PDF (raw)](https://raw.githubusercontent.com/<USER>/<REPO>/<BRANCH>/docs/Atelier-1-SOA.pdf)
+---
+
+## 🎯 Objectifs
+
+À l’issue de ce workshop, l’étudiant sera capable de :
+
+- Analyser une application web existante développée selon un paradigme procédural (organisation logique et physique).
+- Évaluer de manière critique les forces et les limites d’une architecture (maintenabilité, évolutivité, sécurité, lisibilité).
+- Identifier les problèmes de conception freinant l’évolution fonctionnelle et technologique.
+- Justifier le choix d’un paradigme et d’une architecture cible adaptés à l’extension et l’interopérabilité.
+- Concevoir une architecture orientée services, intégrant de nouvelles fonctionnalités :
+   - examens en ligne,
+   - plateforme vidéo,
+   - applications mobiles via API.
+- Structurer une solution modulaire (responsabilités claires par composants/services).
+- Formaliser une proposition d’architecture via schémas (UML ou équivalent) et la communiquer efficacement (écrit/oral).
 
 ---
 
-## 📌 Context  
+## 🧩 1. Contexte général
 
-You are provided with a **web application** for academic management, developed in **native PHP** (no classes or objects).  
+Vous disposez d’une application web de gestion pédagogique développée en **PHP natif** (sans classes ni objets).
 
-The current application allows:  
-- Student registration to modules  
-- Viewing grades  
-- Managing timetables  
-- Internal messaging between users  
+L’application actuelle permet :
+- l’inscription aux modules,
+- la consultation des notes,
+- la gestion des emplois du temps,
+- la communication interne entre utilisateurs.
 
-The university now wants to extend the system by adding:  
-- An **online exam module**  
-- A **platform for pedagogical videos**  
-- A **mobile interface** giving access to main features via **API**  
-
----
-
-## 📝 Tasks  
-
-### Step 1 — Analysis of the Existing System  
-1. Examine the provided source code (see installation guide to run the project).  
-2. Identify the **programming paradigm** used.  
-3. Discuss strengths and weaknesses of this approach (readability, maintainability, security, scalability).  
-4. Describe the **logical architecture** (code organization, modules, main flows).  
-5. Describe the **physical architecture** (deployment structure, components).  
-
-### Step 2 — Critical Study  
-6. List design issues found in the current application.  
-7. Explain why this architecture struggles to meet the new requirements.  
-
-### Step 3 — Proposal for Evolution  
-8. Propose a **new programming paradigm** better adapted to the system’s evolution (**justify your choice**).  
-9. Define a new **logical and physical architecture**, with clear module/service separation and support for mobile + new features.  
-10. Provide an **architecture diagram** of your proposal.  
+L’université souhaite étendre le système en ajoutant :
+- un module d’examens en ligne,
+- une plateforme de vidéos pédagogiques,
+- une interface mobile via API.
 
 ---
 
-## 📦 Deliverables  
+## 📌 Ressources
 
-Each team (3–4 students) must provide:  
-
-1. A **report (4–6 pages)** including:  
-   - Current architecture (logical + physical)  
-   - Identified limitations and problems  
-   - Proposed new architecture (logical + physical)  
-   - Recommended programming paradigm and technologies (with advantages)  
-
-2. An **UML diagram** (or equivalent) illustrating your proposal.  
-3. A **short oral presentation** (5–10 minutes per team).  
+- Projet & ressources :  
+  https://github.com/badi3a/SOA-Training/tree/Workshop-1-ProjectStudy
 
 ---
 
-## 🚀 Getting Started with the Code  
+## ✅ 2. Travail demandé
 
-1. Clone the repository:  
-   ```bash
-   git clone <repo-url>
-   cd atelier-1-soa
-   ```  
+### Étape 1 — Analyse de l’existant
+1. Examiner le code source fourni (suivre le guide d’installation) et identifier :
+   - le paradigme de programmation utilisé,
+   - les forces et limites (lisibilité, maintenabilité, sécurité, évolutivité).
+2. Décrire :
+   - l’architecture **logique** (organisation du code, modules, flux principaux),
+   - l’architecture **physique**.
 
-2. Set up a local **PHP environment** (e.g., XAMPP, WAMP, or PHP built-in server).  
+### Étape 2 — Étude critique
+3. Lister les problèmes de conception identifiés dans l’application actuelle.
+4. Expliquer pourquoi cette architecture pose des difficultés pour répondre aux nouveaux besoins.
 
-3. Import the database if provided (see `/db` folder or installation guide).  
-
-4. Run the project locally:  
-   ```bash
-   php -S localhost:8000
-   ```  
-   Then open [http://localhost:8000](http://localhost:8000) in your browser.  
+### Étape 3 — Proposition d’évolution
+5. Proposer un paradigme de programmation mieux adapté (à justifier).
+6. Définir une nouvelle architecture logique et physique (découpage modules/services) permettant :
+   - l’intégration du mobile,
+   - l’ajout des nouvelles fonctionnalités.
+7. Schématiser la proposition (diagramme d’architecture, etc.).
 
 ---
 
-## 🎯 Learning Goals  
+## 📦 3. Livrables attendus
 
-By completing this workshop, students will:  
-- Practice analyzing existing code and identifying **design flaws**.  
-- Understand the **limitations of procedural programming** for large systems.  
-- Explore **refactoring strategies** towards service-oriented architectures.  
-- Gain experience in defining **logical and physical architectures**.  
-- Learn to justify a **programming paradigm shift** (e.g., from procedural to OOP, MVC, or service-based).  
+Chaque équipe (3–4 étudiants) doit fournir :
+
+1. **Un rapport (4 à 6 pages)** incluant :
+   - architecture actuelle (logique + physique),
+   - limites et problèmes identifiés,
+   - proposition de nouvelle architecture (logique + physique),
+   - paradigme + technologies recommandées et avantages.
+2. **Un schéma UML (ou équivalent)** illustrant la vision.
+3. **Une présentation orale** courte (5–10 minutes) en groupe.
+---
+### 👨‍🏫 Enseigante
+- **[Badia Bouhdid](https://www.linkedin.com/in/badiabouhdid)**
+  
+🏫 Cette formation est dispensée dans le cadre du module Architecture Orientée Services (SOA) à [l’École d’Ingénieurs ESPRIT.](https://www.esprit.tn)
