@@ -4,8 +4,6 @@
 **Module : SOA — Ateliers**  
 **Workshop n°1 : Analyse et Refonte d’une Application Universitaire**
 
-
-➡️ [Voir le PDF (raw)]([https://raw.githubusercontent.com/<USER>/<REPO>/<BRANCH>/docs/Atelier-1-SOA.pdf](https://github.com/badi3a/SOA-Training/blob/Workshop-ProjectStudy/Atelier%20n°1%20-%20SOA.pdf))
 ---
 
 ## 🎯 Objectifs
