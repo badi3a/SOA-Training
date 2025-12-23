@@ -1,4 +1,4 @@
-# 🧪 Atelier SOA — Consommation d’un Service Web SOAP avec SoapUI
+# Atelier SOA — Consommation d’un Service Web SOAP avec SoapUI
 
 **Année Universitaire : 2025–2026**  
 **Module : Architecture Orientée Services (SOA)**  
@@ -57,7 +57,5 @@ Les étudiants doivent :
 ---
 
 ## 🏫 Cadre pédagogique
-### Enseignante:
-
-Cet atelier est dispensé dans le cadre du **module Architecture Orientée Services (SOA)**  
-à l’**École d’Ingénieurs ESPRIT**.
+### Enseignante:- **[Badia Bouhdid](https://www.linkedin.com/in/badiabouhdid)**
+Cet atelier est dispensé dans le cadre du **module Architecture Orientée Services (SOA)**  à l’[**École d’Ingénieurs ESPRIT**.](https://www.esprit.tn)
