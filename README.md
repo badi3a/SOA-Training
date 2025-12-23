@@ -1,155 +1,63 @@
-# 🧪 Workshop REST n°1 — SOA_2025_ahmed was here
+# 🧪 Atelier SOA — Consommation d’un Service Web SOAP avec SoapUI
 
-
-## 📘 Overview
-In this workshop, you will develop a **RESTful Web Service** in **Java (JAX-RS)** to expose business methods for two entities:
-- `UniteEnseignement` (Teaching Unit)
-- `Module`
-
-You will follow the same approach as the **pilot example** (`HelloRessources`) studied in class, but instead of returning simple text, you will expose **CRUD operations** and **search features** for these entities.
+**Année Universitaire : 2025–2026**  
+**Module : Architecture Orientée Services (SOA)**  
+**Atelier : Consommation d’un service web SOAP avec SoapUI**
 
 ---
 
-## 🎯 Objectives
-- Understand how to model entities (`Module`, `UniteEnseignement`) in Java.  
-- Expose CRUD and query endpoints using **JAX-RS resources**.  
-- Separate **business logic** (controller/service) from **resource classes**.  
-- Deploy a **Maven WAR** to Tomcat and test with **Postman**.  
-- Apply **REST best practices** (status codes, content types).  
+## 🎯 Objectifs de l’atelier
+
+L’objectif de cet atelier est de permettre aux étudiants de :
+
+- Comprendre le fonctionnement des **services web SOAP**.
+- Analyser la structure d’un **contrat WSDL**.
+- Identifier les différents composants d’un **message SOAP**.
+- Consommer un service web SOAP existant à l’aide de l’outil **SoapUI**.
+- Analyser les requêtes et les réponses SOAP échangées entre le client et le service.
 
 ---
 
-## 🧠 Context
-The university is modernizing its academic system.  
-Currently, students, teachers, and administrators use a web portal for:
-- module registration,
-- grades consultation,
-- schedule management,
-- internal communication.  
+## 🧩 Contexte
 
-The goal is to **expose some of these features via a REST API** to enable interoperability and mobile client support.
+Dans cet atelier, nous allons consommer un **service web SOAP de type calculatrice**, accessible publiquement, permettant d’effectuer des opérations arithmétiques simples (addition, soustraction, multiplication, division).
+
+Le service est décrit par un contrat **WSDL**, qui sera utilisé pour générer automatiquement les requêtes SOAP dans SoapUI.
 
 ---
 
-## 🧩 Entities
+## 🛠️ Pré-requis
 
-### 1. `UniteEnseignement`
-```java
-package entities;
+### Logiciels requis
+- **SoapUI** (version gratuite ou Open Source)
 
-public class UniteEnseignement {
-    private int code;
-    private String domaine;
-    private String responsable;
-    private int credits;
-    private int semestre;
-
-    public UniteEnseignement() {}
-    public UniteEnseignement(int code, String domaine, String responsable, int credits, int semestre) {
-        this.code = code;
-        this.domaine = domaine;
-        this.responsable = responsable;
-        this.credits = credits;
-        this.semestre = semestre;
-    }
-    // Getters & Setters
-}
-```
-
-### 2. `Module`
-- Attributes: `matricule`, `nom`, `coefficient`, `volumeHoraire`, `type`, `uniteEnseignement`.  
-- Enum `TypeModule`: `TRANSVERSAL`, `PROFESSIONNEL`, `RECHERCHE`.  
-- Implement `equals()` and `hashCode()`.  
+### Connaissances préalables
+- [Bases des services web]
+- [Notions sur XML]
+- [Introduction aux architectures orientées services (SOA)]
 
 ---
 
-## ⚙️ Project Setup
-1. Create a **Maven project** in IntelliJ with packaging type `war`.  
-2. Add dependencies:  
-   - `javax.servlet:javax.servlet-api:4.0.1`  
-   - JAX-RS implementation (e.g., Jersey).  
-3. Add a JAX-RS Activator:  
-   ```java
-   @ApplicationPath("/api")
-   public class RestActivator extends Application {}
-   ```
-4. Project structure:
-```
-src/main/java
-  ├─ entities
-  ├─ business       // service classes
-  └─ webservices    // REST resources
-```
+## 📦 Travail demandé
+
+Les étudiants doivent :
+
+- Expliquer la structure du **WSDL** du service
+- Analyser une **requête SOAP** envoyée
+- Interpréter la **réponse SOAP** reçue
+- Justifier le rôle des **namespaces** utilisés
 
 ---
 
-## 🔗 Endpoints to Implement
+## 📄 Support de l’atelier (PDF)
 
-### A) `UniteEnseignement` — `/UE`
-- `POST /UE` → Create a new teaching unit (XML input).  
-- `GET /UE` → List all teaching units (JSON output).  
-- `GET /UE?semestre=2` → List teaching units for a semester.  
-- `GET /UE?code=123` → Get UE by code.  
-- `PUT /UE/{id}` → Update UE (XML input).  
-- `DELETE /UE/{id}` → Delete UE.  
-
-### B) `Module` — `/modules`
-- `POST /modules` → Create module (JSON input).  
-- `GET /modules` → List all modules (JSON output).  
-- `GET /modules/{matricule}` → Get module by matricule.  
-- `PUT /modules/{matricule}` → Update module (JSON input).  
-- `DELETE /modules/{matricule}` → Delete module.  
-- `GET /modules/UE?codeUE=1` → List all modules of a given UE.  
+📎 **Énoncé officiel de l’atelier** :  
+➡️ (*Atelier – Consommation d’un service web avec SoapUI*)[]
 
 ---
 
-## 🧪 Testing
-- Use **Postman** to test all endpoints.  
-- Input formats:
-  - `application/xml` for UE creation/update.  
-  - `application/json` for modules.  
-- Output format: `application/json`.  
-- Return proper HTTP codes (`200 OK`, `201 Created`, `404 Not Found`, `400 Bad Request`).  
+## 🏫 Cadre pédagogique
+### Enseignante:
 
----
-
-## 📦 Deliverables
-- A complete Maven project with:
-  - Entities (`UniteEnseignement`, `Module`).  
-  - Business layer (services).  
-  - REST Resources.  
-- Postman collection + screenshots for each endpoint.  
-- Updated `README.md` with your group details.  
-
----
-
-## 📝 Submission
-- Create a **GitHub repo** for your team.  
-- Push your project and Postman files.  
-- Submit your repository URL on the LMS.  
-
----
-
-## 🧮 Evaluation
-| Criterion | Weight |
-|-----------|---------|
-| Correct endpoints & paths | 25% |
-| HTTP status codes & media types | 15% |
-| Business logic separation | 20% |
-| CRUD implementation | 20% |
-| Tests (Postman evidence) | 15% |
-| Repo & documentation quality | 5% |
-
----
-
-## 🚀 Next Steps
-Once your REST API is working, we will later explore:
-- **Interoperability** (connecting with clients).  
-- **Security** with JWT.  
-- **GraphQL** as an alternative to REST.
-- ---
-### 👨‍🏫 Instructor
-- **[Badia Bouhdid](https://www.linkedin.com/in/badiabouhdid)**
----
-
-🏫 This training is delivered as part of the **Client-Side Application 1** module at [Esprit School of Engineering](https://www.esprit.tn)
+Cet atelier est dispensé dans le cadre du **module Architecture Orientée Services (SOA)**  
+à l’**École d’Ingénieurs ESPRIT**.
