@@ -3,7 +3,9 @@
 **Année Universitaire : 2025–2026**  
 **Module : SOA — Ateliers**  
 **Workshop n°1 : Analyse et Refonte d’une Application Universitaire**
-➡️ [Voir le PDF (raw)](https://raw.githubusercontent.com/<USER>/<REPO>/<BRANCH>/docs/Atelier-1-SOA.pdf)
+
+
+➡️ [Voir le PDF (raw)]([https://raw.githubusercontent.com/<USER>/<REPO>/<BRANCH>/docs/Atelier-1-SOA.pdf](https://github.com/badi3a/SOA-Training/blob/Workshop-ProjectStudy/Atelier%20n°1%20-%20SOA.pdf))
 ---
 
 ## 🎯 Objectifs
@@ -42,8 +44,9 @@ L’université souhaite étendre le système en ajoutant :
 
 ## 📌 Ressources
 
-- Projet & ressources :  
-  https://github.com/badi3a/SOA-Training/tree/Workshop-1-ProjectStudy
+- [Projet & ressources](https://github.com/badi3a/SOA-Training/tree/Workshop-ProjectStudy/webProject)
+- [Support de cours](https://github.com/badi3a/SOA-Training/blob/Workshop-ProjectStudy/Chapitre1_SOA.pdf)
+- [Atelier PDF](https://github.com/badi3a/SOA-Training/blob/Workshop-ProjectStudy/Atelier%20n°1%20-%20SOA.pdf)
 
 ---
 
