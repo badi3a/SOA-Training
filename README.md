@@ -1,155 +1,109 @@
-# 🧪 Workshop REST n°1 — SOA_2025_ahmed was here
+# 🧩 Architecture Orientée Services (SOA)
 
-
-## 📘 Overview
-In this workshop, you will develop a **RESTful Web Service** in **Java (JAX-RS)** to expose business methods for two entities:
-- `UniteEnseignement` (Teaching Unit)
-- `Module`
-
-You will follow the same approach as the **pilot example** (`HelloRessources`) studied in class, but instead of returning simple text, you will expose **CRUD operations** and **search features** for these entities.
+**Module : Architecture Orientée Services (SOA)**  
+**Année Universitaire : 2025–2026**  
+**École : ESPRIT – École d’Ingénieurs**
 
 ---
 
-## 🎯 Objectives
-- Understand how to model entities (`Module`, `UniteEnseignement`) in Java.  
-- Expose CRUD and query endpoints using **JAX-RS resources**.  
-- Separate **business logic** (controller/service) from **resource classes**.  
-- Deploy a **Maven WAR** to Tomcat and test with **Postman**.  
-- Apply **REST best practices** (status codes, content types).  
+## 📘 Présentation générale du module
+
+Le module **Architecture Orientée Services (SOA)** vise à doter les étudiants des compétences nécessaires pour concevoir, développer et sécuriser des **applications distribuées modernes**, basées sur des services interopérables.
+
+Il couvre l’évolution du Web vers les **services web**, les paradigmes architecturaux associés, ainsi que les technologies majeures utilisées dans les architectures orientées services, telles que **SOAP**, **REST** et **GraphQL**.
+
+Le module adopte une approche **progressive et pratique**, combinant cours théoriques, ateliers techniques et workshops applicatifs.
 
 ---
 
-## 🧠 Context
-The university is modernizing its academic system.  
-Currently, students, teachers, and administrators use a web portal for:
-- module registration,
-- grades consultation,
-- schedule management,
-- internal communication.  
+## 🎯 Objectifs pédagogiques du module
 
-The goal is to **expose some of these features via a REST API** to enable interoperability and mobile client support.
+À l’issue de ce module, l’étudiant sera capable de :
+
+- Comprendre les **fondements des architectures orientées services**
+- Concevoir et exposer des **services web** selon différents styles architecturaux
+- Comparer et choisir entre **SOAP, REST et GraphQL**
+- Sécuriser des services web à l’aide de mécanismes standards
+- Mettre en œuvre des **API interopérables et évolutives**
 
 ---
 
-## 🧩 Entities
+## 📚 Contenu du module
 
-### 1. `UniteEnseignement`
-```java
-package entities;
+### 🔹 Cours
 
-public class UniteEnseignement {
-    private int code;
-    private String domaine;
-    private String responsable;
-    private int credits;
-    private int semestre;
+### 📌 Cours 1 — Introduction aux Architectures orientées services 
+➡️ [`Workshop-ProjectStudy`]https://github.com/badi3a/SOA-Training/tree/Workshop-ProjectStudy
 
-    public UniteEnseignement() {}
-    public UniteEnseignement(int code, String domaine, String responsable, int credits, int semestre) {
-        this.code = code;
-        this.domaine = domaine;
-        this.responsable = responsable;
-        this.credits = credits;
-        this.semestre = semestre;
-    }
-    // Getters & Setters
-}
+- Analyse d’une application existante
+- Étude des limites architecturales
+- Proposition d’une refonte orientée services
+
+---
+
+### 📌 Cours — Découverte des services Web étendus: SOAP 
+➡️ [`Workshop-SOAP`](https://github.com/badi3a/SOA-Training/tree/workshop-soap)
+
+- Analyse du WSDL
+- Compréhension des messages SOAP
+- Consommation d’un service web via SoapUI
+
+---
+
+### 📌 Cours — Services Web REST
+➡️ [`Workshop-REST`](https://github.com/badi3a/SOA-Training/tree/workshop-RestApi)
+
+- Conception de ressources REST
+- Implémentation des opérations CRUD
+- Tests des services REST
+
+---
+
+### 📌 Cours — Sécurisation des Services REST
+➡️ [`Workshop-REST-Security`](https://github.com/badi3a/SOA-Training/tree/workshop-security)
+
+- Authentification basée sur les jetons (JWT)
+- Autorisation d’accès aux ressources
+- Sécurisation des API REST avec JAX-RS
+
+---
+
+### 📌 Workshop — Mise en place d’une API GraphQL
+➡️ [`Workshop-GraphQL`](https://github.com/badi3a/SOA-Training/tree/workshop-graphQL)
+
+- Introduction à GraphQL
+- Conception du schéma GraphQL
+- Implémentation des queries et mutations
+- Comparaison avec REST
+
+---
+
+## 📊 Acquis d’Apprentissage du Module (AAP)
+
+Les ateliers et workshops du module permettent de couvrir les **AAP suivants** :
+
+- **AAP1** : Analyser une architecture logicielle existante
+- **AAP2** : Concevoir une architecture orientée services
+- **AAP3** : Développer et exposer des services web
+- **AAP4** : Consommer et intégrer des services web
+- **AAP5** : Sécuriser des services web
+- **AAP6** : Comparer et justifier le choix d’un style architectural
+
+---
+
+## 📂 Organisation du repository
+
+```text
+SOA-Training/
+│
+├── Workshop-1-ProjectStudy/
+├── Workshop-SOAP/
+├── Workshop-REST/
+├── Workshop-REST-Security/
+├── Workshop-GraphQL/
+│
+└── README.md
 ```
-
-### 2. `Module`
-- Attributes: `matricule`, `nom`, `coefficient`, `volumeHoraire`, `type`, `uniteEnseignement`.  
-- Enum `TypeModule`: `TRANSVERSAL`, `PROFESSIONNEL`, `RECHERCHE`.  
-- Implement `equals()` and `hashCode()`.  
-
----
-
-## ⚙️ Project Setup
-1. Create a **Maven project** in IntelliJ with packaging type `war`.  
-2. Add dependencies:  
-   - `javax.servlet:javax.servlet-api:4.0.1`  
-   - JAX-RS implementation (e.g., Jersey).  
-3. Add a JAX-RS Activator:  
-   ```java
-   @ApplicationPath("/api")
-   public class RestActivator extends Application {}
-   ```
-4. Project structure:
-```
-src/main/java
-  ├─ entities
-  ├─ business       // service classes
-  └─ webservices    // REST resources
-```
-
----
-
-## 🔗 Endpoints to Implement
-
-### A) `UniteEnseignement` — `/UE`
-- `POST /UE` → Create a new teaching unit (XML input).  
-- `GET /UE` → List all teaching units (JSON output).  
-- `GET /UE?semestre=2` → List teaching units for a semester.  
-- `GET /UE?code=123` → Get UE by code.  
-- `PUT /UE/{id}` → Update UE (XML input).  
-- `DELETE /UE/{id}` → Delete UE.  
-
-### B) `Module` — `/modules`
-- `POST /modules` → Create module (JSON input).  
-- `GET /modules` → List all modules (JSON output).  
-- `GET /modules/{matricule}` → Get module by matricule.  
-- `PUT /modules/{matricule}` → Update module (JSON input).  
-- `DELETE /modules/{matricule}` → Delete module.  
-- `GET /modules/UE?codeUE=1` → List all modules of a given UE.  
-
----
-
-## 🧪 Testing
-- Use **Postman** to test all endpoints.  
-- Input formats:
-  - `application/xml` for UE creation/update.  
-  - `application/json` for modules.  
-- Output format: `application/json`.  
-- Return proper HTTP codes (`200 OK`, `201 Created`, `404 Not Found`, `400 Bad Request`).  
-
----
-
-## 📦 Deliverables
-- A complete Maven project with:
-  - Entities (`UniteEnseignement`, `Module`).  
-  - Business layer (services).  
-  - REST Resources.  
-- Postman collection + screenshots for each endpoint.  
-- Updated `README.md` with your group details.  
-
----
-
-## 📝 Submission
-- Create a **GitHub repo** for your team.  
-- Push your project and Postman files.  
-- Submit your repository URL on the LMS.  
-
----
-
-## 🧮 Evaluation
-| Criterion | Weight |
-|-----------|---------|
-| Correct endpoints & paths | 25% |
-| HTTP status codes & media types | 15% |
-| Business logic separation | 20% |
-| CRUD implementation | 20% |
-| Tests (Postman evidence) | 15% |
-| Repo & documentation quality | 5% |
-
----
-
-## 🚀 Next Steps
-Once your REST API is working, we will later explore:
-- **Interoperability** (connecting with clients).  
-- **Security** with JWT.  
-- **GraphQL** as an alternative to REST.
-- ---
-### 👨‍🏫 Instructor
-- **[Badia Bouhdid](https://www.linkedin.com/in/badiabouhdid)**
----
-
-🏫 This training is delivered as part of the **Client-Side Application 1** module at [Esprit School of Engineering](https://www.esprit.tn)
+## 🏫 Cadre pédagogique
+### Enseignante:- **[Badia Bouhdid](https://www.linkedin.com/in/badiabouhdid)**
+Cet atelier est dispensé dans le cadre du **module Architecture Orientée Services (SOA)**  à l’[**École d’Ingénieurs ESPRIT**.](https://www.esprit.tn)
