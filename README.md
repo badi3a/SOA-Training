@@ -34,7 +34,7 @@ Le service est décrit par un contrat **WSDL**, qui sera utilisé pour générer
 ### Connaissances préalables
 - [Bases des services web](https://github.com/badi3a/SOA-Training/blob/Workshop-ProjectStudy/Chapitre1_SOA.pdf)
 - [Notions sur XML](https://github.com/badi3a/SOA-Training/blob/workshop-soap/chapitre_XML.pdf)
-- [Introduction aux architectures orientées services basé sur le SOAP](https://github.com/badi3a/SOA-Training/tree/workshop-soap)
+- [Introduction aux architectures orientées services basé sur le SOAP](https://github.com/badi3a/SOA-Training/blob/workshop-soap/chapitre_soap.pdf)
 
 ---
 
@@ -52,7 +52,7 @@ Les étudiants doivent :
 ## 📄 Support de l’atelier (PDF)
 
 📎 **Énoncé officiel de l’atelier** :  
-➡️ (*Atelier – Consommation d’un service web avec SoapUI*)[https://github.com/badi3a/SOA-Training/blob/workshop-soap/Atelier-Consommation%20avec%20SoapUI.pdf]
+➡️ [*Atelier – Consommation d’un service web avec SoapUI*](https://github.com/badi3a/SOA-Training/blob/workshop-soap/chapitre_soap.pdf)
 
 ---
 
