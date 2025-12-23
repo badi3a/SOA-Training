@@ -26,24 +26,23 @@
 ---
 
 ## 🛠️ Outils à installer
-
-- **JDK (Java Development Kit)**
-- **IntelliJ IDEA** (ou tout IDE Java équivalent)
-- **Apache Maven**
-- **Serveur d’applications** (Tomcat ou équivalent)
-- **Postman** (ou tout autre client REST)
-- Accès à un **outil de décodage JWT** (ex. jwt.io)
+- [**JDK (Java Development Kit)**](https://www.oracle.com/in/java/technologies/downloads/)
+- [**IntelliJ IDEA**](https://www.jetbrains.com/idea/download/?section=windows)
+- [**Apache Maven**](https://maven.apache.org)
+- [**Serveur d’applications**](https://tomcat.apache.org)
+- [**Postman** ](https://tomcat.apache.org)ou tout autre outil de test d’API REST
+- Accès à un [**outil de décodage JWT**](https://www.jwt.io)
 
 ---
 
 ## 📂 Ressources
 
-- Énoncé officiel de l’atelier (PDF)
-- Projet REST CRUD réalisé dans les ateliers précédents
-- Supports du module SOA
+- [Énoncé officiel de l’atelier (PDF)](https://github.com/badi3a/SOA-Training/blob/workshop-security/Atelier5-JAX-RS%20Security.pdf)
+- [Projet REST CRUD réalisé dans les ateliers précédents](https://github.com/badi3a/SOA-Training/tree/workshop-security/Gestion_UE_Etudiant)
+- [Supports de cours JWT](https://github.com/badi3a/SOA-Training/blob/workshop-security/Cours_JWT.pdf)
 
 📎 **Support du workshop** :  
-➡️ *Atelier 5 – Sécuriser un service web RESTful (JAX-RS)*
+➡️ [*Atelier 5 – Sécuriser un service web RESTful (JAX-RS)*](https://github.com/badi3a/SOA-Training/blob/workshop-security/Atelier5-JAX-RS%20Security.pdf)
 
 ---
 
