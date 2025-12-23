@@ -29,7 +29,7 @@
 - [**JDK (Java Development Kit)**](https://www.oracle.com/in/java/technologies/downloads/)
 - [**IntelliJ IDEA**](https://www.jetbrains.com/idea/download/?section=windows)
 - [**Apache Maven**](https://maven.apache.org)
-- [**Serveur d’applications**] (https://tomcat.apache.org)
+- [**Serveur d’applications**](https://tomcat.apache.org)
 - [**Postman** ](https://tomcat.apache.org)ou tout autre outil de test d’API REST
 
 ---
