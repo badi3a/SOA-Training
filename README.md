@@ -25,21 +25,20 @@
 
 ## 🛠️ Outils à installer
 
-- **JDK (Java Development Kit)**
-- **IntelliJ IDEA** (ou tout IDE Java équivalent)
-- **Apache Maven**
-- **Serveur d’applications** (Tomcat ou équivalent)
-- **Postman** ou tout client compat
+- [**JDK (Java Development Kit)**](https://www.oracle.com/in/java/technologies/downloads/)
+- [**IntelliJ IDEA**](https://www.jetbrains.com/idea/download/?section=windows)
+- [**Apache Maven**](https://maven.apache.org)
+- [**Serveur d’applications**](https://tomcat.apache.org)
+- [**Postman** ](https://tomcat.apache.org)ou tout autre outil de test d’API REST
 ---
 
 ## 📂 Ressources
 
-- Énoncé officiel du workshop (PDF)
-- Projet de base fourni (entités et logique métier)
-- Supports du module SOA
+- [Projet de base fourni (entités et logique métier)](https://github.com/badi3a/SOA-Training/tree/workshop-graphQL/GraphQL)
+[- Supports de cours GraphQL](https://github.com/badi3a/SOA-Training/blob/workshop-graphQL/chapitre_GraphQL.pdf)
 
 📎 **Support du workshop** :  
-➡️ *Atelier GraphQL – Mise en place d’une API GraphQL*
+➡️ [*Atelier GraphQL – Mise en place d’une API GraphQL*](https://github.com/badi3a/SOA-Training/blob/workshop-graphQL/Atelier_GraphQL.pdf)
 
 ---
 
@@ -55,7 +54,8 @@ Les étudiants doivent :
 
 ---
 
-## 🏫 Cadre pédagogique
 
-Ce workshop est dispensé dans le cadre du **module Architecture Orientée Services (SOA)**  
-à l’**École d’Ingénieurs ESPRIT**.
+## 🏫 Cadre pédagogique
+### Enseignante:- **[Badia Bouhdid](https://www.linkedin.com/in/badiabouhdid)**
+Cet atelier est dispensé dans le cadre du **module Architecture Orientée Services (SOA)**  à l’[**École d’Ingénieurs ESPRIT**.](https://www.esprit.tn)
+
