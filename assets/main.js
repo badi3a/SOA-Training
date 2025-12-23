@@ -8,35 +8,35 @@ const items = [
         title: "Workshop 1 — Analyse & Refonte d’une application",
         desc: "Analyse d’une application existante et proposition d’une refonte orientée services.",
         tag: "Projet",
-        href: "./Workshop-1-ProjectStudy/"
+        href: "https://github.com/badi3a/SOA-Training/Workshop-ProjectStudy/"
     },
     {
         type: "lab",
         title: "Atelier SOAP — Consommation avec SoapUI",
         desc: "Découverte du WSDL et consommation d’un service SOAP via SoapUI.",
         tag: "SOAP",
-        href: "./Workshop-SOAP/"
+        href: "https://github.com/badi3a/SOA-Training/Workshop-SOAP/"
     },
     {
         type: "lab",
         title: "Atelier REST — Mise en place d’un service RESTful",
         desc: "Conception de ressources REST et mise en œuvre d’une API CRUD.",
         tag: "REST",
-        href: "./Workshop-REST/"
+        href: "https://github.com/badi3a/SOA-Training/tree/Workshop-ProjectStudy"
     },
     {
         type: "workshop",
         title: "Workshop Sécurité — JAX-RS Security (JWT)",
         desc: "Sécurisation des ressources REST par authentification basée sur token (JWT).",
         tag: "Security",
-        href: "./Workshop-REST-Security/"
+        href: "https://github.com/badi3a/SOA-Training/tree/workshop-security"
     },
     {
         type: "workshop",
         title: "Workshop GraphQL — Mise en place d’une API GraphQL",
         desc: "Conception du schéma GraphQL et opérations Query/Mutation, tests via client.",
         tag: "GraphQL",
-        href: "./Workshop-GraphQL/"
+        href: "https://github.com/badi3a/SOA-Training/tree/workshop-graphQL"
     },
     // (Optionnel) si tu as des cours en dossiers:
     {
@@ -44,7 +44,7 @@ const items = [
         title: "Cours — Introduction SOA",
         desc: "Fondations, évolution du Web, paradigmes architecturaux, services & middleware.",
         tag: "Cours",
-        href: "./Cours/Introduction-SOA/"
+        href: "https://github.com/badi3a/SOA-Training/blob/main/Présentation_Module_SOA.pdf"
     }
 ];
 

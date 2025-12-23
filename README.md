@@ -32,8 +32,8 @@ Le module adopte une approche **progressive et pratique**, combinant cours théo
 
 ### 🔹 Cours
 
-### 📌 Cours 1 — Introduction aux Architectures orientées services 
-➡️ [`Workshop-ProjectStudy`]https://github.com/badi3a/SOA-Training/tree/Workshop-ProjectStudy
+### 📌 Cours 1 — Introduction aux Architectures orientées services
+➡️ [`Workshop-ProjectStudy`](https://github.com/badi3a/SOA-Training/tree/Workshop-ProjectStudy)
 
 - Analyse d’une application existante
 - Étude des limites architecturales
@@ -41,7 +41,7 @@ Le module adopte une approche **progressive et pratique**, combinant cours théo
 
 ---
 
-### 📌 Cours — Découverte des services Web étendus: SOAP 
+### 📌 Cours 2— Découverte des services Web étendus: SOAP
 ➡️ [`Workshop-SOAP`](https://github.com/badi3a/SOA-Training/tree/workshop-soap)
 
 - Analyse du WSDL
@@ -50,7 +50,7 @@ Le module adopte une approche **progressive et pratique**, combinant cours théo
 
 ---
 
-### 📌 Cours — Services Web REST
+### 📌 Cours 3— Services Web REST
 ➡️ [`Workshop-REST`](https://github.com/badi3a/SOA-Training/tree/workshop-RestApi)
 
 - Conception de ressources REST
@@ -59,7 +59,7 @@ Le module adopte une approche **progressive et pratique**, combinant cours théo
 
 ---
 
-### 📌 Cours — Sécurisation des Services REST
+### 📌 Cours —4 Sécurisation des Services REST
 ➡️ [`Workshop-REST-Security`](https://github.com/badi3a/SOA-Training/tree/workshop-security)
 
 - Authentification basée sur les jetons (JWT)
@@ -68,7 +68,7 @@ Le module adopte une approche **progressive et pratique**, combinant cours théo
 
 ---
 
-### 📌 Workshop — Mise en place d’une API GraphQL
+### 📌 Workshop 5— Mise en place d’une API GraphQL
 ➡️ [`Workshop-GraphQL`](https://github.com/badi3a/SOA-Training/tree/workshop-graphQL)
 
 - Introduction à GraphQL
