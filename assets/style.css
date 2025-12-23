@@ -1,0 +1,86 @@
+:root {
+    --soft-bg: #f6f7fb;
+    --card-shadow: 0 10px 30px rgba(0,0,0,.08);
+    --brand: #6ea8fe;
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+.brand-dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: var(--brand);
+    display: inline-block;
+    box-shadow: 0 0 0 4px rgba(110,168,254,.2);
+}
+
+.hero{
+    position: relative;
+    background: radial-gradient(1200px 600px at 20% 10%, rgba(110,168,254,.20), transparent 55%),
+    radial-gradient(900px 500px at 80% 30%, rgba(13,110,253,.12), transparent 55%),
+    linear-gradient(180deg, #ffffff, #ffffff);
+}
+
+.hero-wave{
+    height: 42px;
+    background: linear-gradient(90deg, rgba(110,168,254,.25), rgba(13,110,253,.10));
+    opacity: .6;
+}
+
+.section{
+    padding: 72px 0;
+}
+
+.bg-soft{
+    background: var(--soft-bg);
+}
+
+.section-title{
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+}
+
+.shadow-soft{
+    box-shadow: var(--card-shadow);
+}
+
+.stat .stat-icon{
+    font-size: 1.35rem;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: rgba(13,110,253,.08);
+    margin-bottom: 10px;
+}
+
+.stat .stat-value{
+    font-weight: 800;
+    font-size: 1.05rem;
+}
+
+.stat .stat-label{
+    color: rgba(0,0,0,.6);
+    font-size: .9rem;
+}
+
+/* Dark mode (toggle via JS) */
+body.theme-dark{
+    background: #0b1220;
+    color: #e7eefc;
+}
+
+body.theme-dark .bg-soft{ background: rgba(255,255,255,.06); }
+body.theme-dark .navbar{ background: #0b1220 !important; }
+body.theme-dark .hero{ background: radial-gradient(1200px 600px at 20% 10%, rgba(110,168,254,.18), transparent 55%),
+radial-gradient(900px 500px at 80% 30%, rgba(13,110,253,.12), transparent 55%),
+linear-gradient(180deg, #0b1220, #0b1220); }
+body.theme-dark .card{ background: rgba(255,255,255,.06); color: #e7eefc; }
+body.theme-dark .text-body-secondary{ color: rgba(231,238,252,.75) !important; }
+body.theme-dark .border-top{ border-color: rgba(255,255,255,.10) !important; }
+body.theme-dark .hero-wave{ opacity: .25; }
