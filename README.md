@@ -105,5 +105,16 @@ SOA-Training/
 └── README.md
 ```
 ## 🏫 Cadre pédagogique
-### Enseignante:- **[Badia Bouhdid](https://www.linkedin.com/in/badiabouhdid)**
-Cet atelier est dispensé dans le cadre du **module Architecture Orientée Services (SOA)**  à l’[**École d’Ingénieurs ESPRIT**.](https://www.esprit.tn)
+
+### Enseignante : **[Badia Bouhdid](https://www.linkedin.com/in/badiabouhdid)**
+-
+Ce cours a été développé dans le cadre du **module Architecture Orientée Services (SOA)**,  
+en collaboration avec d’autres enseignants, à l’**[École d’Ingénieurs ESPRIT](https://www.esprit.tn)**.
+---
+<p align="center">
+  <img src="https://www.esprit.tn/wp-content/uploads/2025/03/Entree-campus-scaled.jpg" alt="Entrée du campus ESPRIT" />
+  <br>
+  <em>École d’Ingénieurs ESPRIT – Campus</em>
+</p>
+
+
