@@ -53,4 +53,31 @@ public class QueryResolver implements GraphQLRootResolver {
         // which fetches all UE entities (e.g., from a database or a static list)
         return helper.getListeUE();
     }
+
+    public UniteEnseignement getByCode(int code){
+        return helper.getUEByCode(code);
+    }
+
+    // Mettre à jour une UE existante
+    public UniteEnseignement updateUniteEnseignement(int code, String domaine, String responsable, int credits, int semestre) {
+        UniteEnseignement ue = helper.getUEByCode(code);
+        if (ue != null) {
+            // Crée un nouvel objet ou mets à jour l'existant
+            UniteEnseignement updatedUE = new UniteEnseignement(code, domaine, responsable, credits, semestre);
+            boolean success = helper.updateUniteEnseignement(code, updatedUE);
+            if (success) {
+                return updatedUE;
+            }
+        }
+        return null; // UE non trouvée
+    }
+
+    // Supprimer une UE
+    public boolean deleteUniteEnseignement(int code) {
+        return helper.deleteUniteEnseignement(code);
+    }
+
+
+
+
 }
