@@ -1,14 +1,20 @@
 package entities;
 
+import javax.xml.bind.annotation.XmlRootElement;
+import java.util.Objects;
+
+@XmlRootElement(name = "module")
 public class Module {
     private String matricule;
     private String nom;
     private int coefficient;
     private int volumeHoraire;
     private TypeModule type;
-    private UniteEnseignement uniteEnseignement; // Référence vers l'UE associée
-    public Module(){}
-    // Constructeur
+    private UniteEnseignement uniteEnseignement;
+
+    public Module() {
+    }
+
     public Module(String matricule, String nom, int coefficient, int volumeHoraire, TypeModule type) {
         this.matricule = matricule;
         this.nom = nom;
@@ -16,22 +22,22 @@ public class Module {
         this.volumeHoraire = volumeHoraire;
         this.type = type;
     }
-    public Module(String matricule, String nom, int coefficient, int volumeHoraire, TypeModule type,UniteEnseignement uniteEnseignement) {
+
+    public Module(String matricule, String nom, int coefficient, int volumeHoraire, TypeModule type, UniteEnseignement uniteEnseignement) {
         this.matricule = matricule;
         this.nom = nom;
         this.coefficient = coefficient;
         this.volumeHoraire = volumeHoraire;
         this.type = type;
-        this.uniteEnseignement=uniteEnseignement;
+        this.uniteEnseignement = uniteEnseignement;
     }
-    // Enumération TypeModule
+
     public enum TypeModule {
         TRANSVERSAL,
         PROFESSIONNEL,
         RECHERCHE
     }
 
-    // Getters et Setters
     public String getMatricule() {
         return matricule;
     }
@@ -80,5 +86,16 @@ public class Module {
         this.uniteEnseignement = uniteEnseignement;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Module)) return false;
+        Module module = (Module) o;
+        return Objects.equals(matricule, module.matricule);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(matricule);
+    }
 }
