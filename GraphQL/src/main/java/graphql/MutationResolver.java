@@ -1,7 +1,9 @@
 package graphql;
 
 // Import the business logic class responsible for managing "UniteEnseignement" data
+import business.ModuleBusiness;
 import business.UniteEnseignementBusiness;
+import entities.Module;
 
 // Import the GraphQL library class used to define the root of GraphQL mutations
 import com.coxautodev.graphql.tools.GraphQLRootResolver;
@@ -18,7 +20,7 @@ public class MutationResolver implements GraphQLRootResolver {
 
     // Attribute used to access the business logic (service layer)
     public UniteEnseignementBusiness helper;
-
+    public ModuleBusiness helper2;
     /**
      * Constructor of the resolver.
      * It initializes the business helper that manages the teaching units.
@@ -53,5 +55,35 @@ public class MutationResolver implements GraphQLRootResolver {
         // Call the business logic method to add the new unit
         // The helper handles the actual persistence or logic of adding the entity
         return helper.addUniteEnseignement(ue);
+    }
+    public boolean addModule(String matricule, String nom, int coefficient,
+                             int volumeHoraire, Module.TypeModule type, int codeUE) {
+
+        UniteEnseignement ue = helper.getUEByCode(codeUE);
+
+        Module module = new Module(matricule, nom, coefficient, volumeHoraire, type, ue);
+
+        return helper2.addModule(module);
+    }
+
+    public boolean updateModule(String matricule, String nom,
+                                Integer coefficient, Integer volumeHoraire, Module.TypeModule type) {
+
+        Module existing = helper2.getModuleByMatricule(matricule);
+
+        if (existing != null) {
+            if (nom != null) existing.setNom(nom);
+            if (coefficient != null) existing.setCoefficient(coefficient);
+            if (volumeHoraire != null) existing.setVolumeHoraire(volumeHoraire);
+            if (type != null) existing.setType(type);
+
+            return helper2.updateModule(matricule, existing);
+        }
+
+        return false;
+    }
+
+    public boolean deleteModule(String matricule){
+        return helper2.deleteModule(matricule);
     }
 }
