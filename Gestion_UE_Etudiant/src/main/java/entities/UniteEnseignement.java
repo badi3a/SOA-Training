@@ -1,5 +1,4 @@
 package entities;
-
 public class UniteEnseignement {
     private int code;
     private String domaine;
