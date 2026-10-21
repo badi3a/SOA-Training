@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Gestion_UE_VF:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Gestion_UE_VF_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Gestion_UE_VF" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="dir-copy" path="$PROJECT_DIR$/target/Gestion_UE_VF-1.0-SNAPSHOT/WEB-INF/lib" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
